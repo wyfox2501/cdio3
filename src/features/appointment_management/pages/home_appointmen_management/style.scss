@@ -1,0 +1,22 @@
+.body{
+    display: flex;
+    .side{
+        margin-top: 40px;
+        margin-left: 50px;
+        width: 15%;
+        height: auto;
+    }
+    .container{
+        width: 78%;
+        height: 100vh;
+        display: flex;
+        background-color: #89B7FB;
+        margin-top: 40px;
+      img{
+        width: 400px;
+        height: auto;
+        padding: 50px;
+      }
+        
+    }
+}

@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.scss';
-import Header11 from './components/header/index.jsx'
+import logo from "./logo.svg";
+import "./App.scss";
+import Home from "./features/appointment_management/pages/home_appointmen_management/home_appointment_management.jsx";
 function App() {
   return (
     <div className="App">
-     <Header11/>
+      <Home />
     </div>
   );
 }

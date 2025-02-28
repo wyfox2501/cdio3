@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./style.scss";
-import Cat from '../images/cat.png'
-import Healthycare from '../images/healthycare.jpg'
+import Cat from '../../images/cat.png'
+import Healthycare from "../../images/healthycare.jpg";
 header.propTypes = {};
 
 function header(props) {
