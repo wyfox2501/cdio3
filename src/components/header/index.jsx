@@ -1,11 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./style.scss";
-import Cat from '../../images/cat.png'
-import Healthycare from "../../images/healthycare.jpg";
-header.propTypes = {};
+import Cat from '../../../images/cat.png'
+import Healthycare from "../../../images/healthycare.jpg";
+import { useState } from "react";
+header.propTypes = {
+};
 
-function header(props) {
+
+//const [clickLink,setClickLink] = useState
+function header(dataheader) {
   return (
     <div>
     <div class='menu'>
@@ -15,6 +19,7 @@ function header(props) {
           <h4>HealthCare</h4>
         </div>
         <div class="function">
+        
           <a href="">Tổng Quan</a>
           <a href="">Quản Lý Lịch</a>
           <a href="">Nộp tiền</a>

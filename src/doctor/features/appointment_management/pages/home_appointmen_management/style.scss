@@ -1,0 +1,17 @@
+.body {
+  display: flex;
+  .side {
+    margin-top: 40px;
+    margin-left: 50px;
+    height: auto;
+  }
+  .container {
+    width: 77vw;
+    height: 100vh;
+    display: flex;
+    background-color: #89b7fb;
+    margin-top: 40px;
+   background-image: url("../../../../../images/dfc9485ada0eb3d69b67423762f56ba8.jpg");
+   background-size: cover;
+  }
+}
