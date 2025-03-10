@@ -1,13 +1,28 @@
-.body{
+.container-main{
+  width: 79rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .heading{
+    width: 95%;
+  }
+
+  .body{
     display: flex;
-    .side {
-      margin-top: 40px;
-      margin-left: 4%;
-      height: auto;
+    border: 1px solid rgb(163, 163, 163);
+    border-radius: 1rem;
+    width: 95%;
+    padding: 1rem;
+
+    .side{
+      width: 20%;
     }
-    .container{
-      background-color: #cce5ff;
-        width: 77vw;
-      height: auto;
+
+
+    .doctor-body{
+      width: 79%;
     }
   }
+}

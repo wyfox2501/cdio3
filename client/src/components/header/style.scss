@@ -1,13 +1,13 @@
 .menu {
-  width: 90%;
+  width: 100%;
   height: auto;
-  margin-left: 50px;
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
   background-color: #ffffff;
   box-shadow: 6px 8px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
+  margin-block: 1rem;
+
   .left-menu {
     width: 70%;
     height: auto;

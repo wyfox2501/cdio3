@@ -54,13 +54,15 @@ function DataSidebar(props) {
     },
   ];
   return (
-    <div>
-      <Heading />
+    <div className="container-main">
+      <div className="heading">
+        <Heading />
+      </div>
       <div className="body">
         <div className="side">
           <Demo managerList={managerList} viewList={viewList} />
         </div>
-        <div className="container">
+        <div className="doctor-body">
           <Outlet />
         </div>
       </div>
