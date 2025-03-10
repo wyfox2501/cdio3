@@ -1,13 +1,14 @@
 .sidebar {
 
   width: 220px;
-  height: 100vh;
+  height: auto;
   display: block;
   background-color: #ffffff;
-  box-shadow: 8px 3px rgba(0, 0, 0, 0.1);
+  padding-bottom: 2px;
+  box-shadow: -4px 3px rgba(0, 0, 0, 0.1);
 
   a {
-    width: 150px;
+    width: 170px;
     display: block;
     padding: 15px;
     font-size: 20px;

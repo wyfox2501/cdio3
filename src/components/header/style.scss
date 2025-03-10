@@ -43,11 +43,12 @@
         padding: 15px;
         border-radius: 35px;
         margin: 0px 20px;
+        &:hover {
+          color: #ffffff;
+          background-color: #016bf7;
+        }
       }
-      a:hover {
-        color: #ffffff;
-        background-color: #016bf7;
-      }
+      
     }
   }
   .right-menu {

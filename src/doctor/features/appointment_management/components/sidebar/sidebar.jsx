@@ -1,7 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./style.scss";
+import "./styleSide.scss";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import He from "../../../../../components/header/index";
 Demo.propTypes = {
     managerList: PropTypes.array,
@@ -16,7 +17,7 @@ function Demo({managerList, viewList}) {
   const [isOn, setIsOn] = useState("#ffffff");
   const [activeLink, setActiveLink] = useState(null);
 const id=1;
-  //lên xún dropdown và đổi màumàu
+  //lên xún dropdown và đổi màu
   const toggleDropdown = (id) => {
     if (id===1){
         setIsOpen(!isOpen);
@@ -24,7 +25,7 @@ const id=1;
     }
   
   };
-  //đổi màu trong dropdowmdropdowm
+  //đổi màu trong dropdowm
   const toggleColor = () => {
     setIsOn("#DDF1F9");
   };
@@ -37,9 +38,9 @@ const id=1;
      <div className="sidebar">
       {managerList.map(data=>(
         <React.Fragment key={data.id}>
-        <a
+        <NavLink
+        to={data.path}
           className="view-calendar"
-          href="#"
           onClick={() => {
             toggleDropdown(data.id);
             handleClick(data.id)
@@ -50,24 +51,24 @@ const id=1;
         >
           <span>⚫</span>
           {data.title} { data.id===1 && (isOpen ? "▲" : "▼")}
-        </a>
+        </NavLink>
         {isOpen && data.id===1 && (
             <div  className="calendar">
             {viewList.map(dataview=>(
                 
-            <a
+            <NavLink
             key={dataview.id_view}
-              href="#"
+              to={dataview.path}
               style={{
                 backgroundColor: activeLink === dataview.id_view ? isOn : "#ffffff",
               }}
               onClick={() => {
-                toggleColor();
+                toggleColor(dataview.id_view);
                 handleClick(dataview.id_view);
               }}
             >
               {dataview.title}
-            </a>
+            </NavLink>
             ))}
             </div>
         )}

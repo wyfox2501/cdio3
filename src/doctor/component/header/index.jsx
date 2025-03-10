@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Header from '../../../components/header/index'
 
-index.propTypes = {
+Index.propTypes = {
     
 };
 
-function index(props) {
+function Index(props) {
     const headerDoctor=[
         {
             id: 1,
@@ -13,14 +14,18 @@ function index(props) {
         },
         {
             id: 2,
-            title: 
+            title: 'Quản Lý Lịch'
+        },
+        {
+            id: 3,
+            title: 'Nộp tiền'
         }
     ]
     return (
         <div>
-            
+            <Header dataheader={headerDoctor}/>
         </div>
     );
 }
 
-export default index;
+export default Index;
