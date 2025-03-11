@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "./style.scss";
 import Cat from "../../images/cat.png";
 import Healthycare from "../../images/healthycare.jpg";
+import { Link } from "react-router-dom";
 
 Header.propTypes = {
   dataheader: PropTypes.array,
@@ -12,15 +13,16 @@ Header.defaultProps = {
 };
 
 
+
 function Header({dataheader}) {
   return (
     <div>
       <div class="menu">
         <div class="left-menu">
-          <div class="headthy">
+          <Link className="health" to="/">
             <img src={Healthycare} alt="HealthCare" />
             <h4>HealthCare</h4>
-          </div>
+          </Link>
           <div class="function">
             {dataheader.map(data=> (
               <React.Fragment key={data.id}>
