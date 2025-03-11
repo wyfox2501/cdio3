@@ -1,0 +1,73 @@
+.container {
+  padding: 16px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.search-box,
+.department-select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  flex: 1;
+  transition: all 0.2s ease-in-out;
+  
+  &:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    outline: none;
+  }
+}
+
+.doctor-list {
+  background: #eef5ff;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.doctor-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background: #f8f9fa;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.doctor-avatar {
+  width: 45px;
+  height: 45px;
+  background: #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+  color: #555;
+}
+
+.doctor-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.doctor-price {
+  color: red;
+  font-weight: bold;
+}
