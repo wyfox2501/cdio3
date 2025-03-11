@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Calendar from "../../components/View_calendar/appointment";
+import Calendar from "../../components/View_calendar_List/appointment";
 import Header from "../../../../component/header/index";
 import Sidebar from "../../dataSidebar";
 View_calendar.propTypes = {};

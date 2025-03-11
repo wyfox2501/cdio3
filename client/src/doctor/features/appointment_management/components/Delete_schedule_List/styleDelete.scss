@@ -34,13 +34,17 @@
           font-size: 20px;
         }
         input {
-          padding: 8px;
+            width: 11rem;
           border-radius: 10px;
           border: 1px solid #ccc;
           text-align: center;
         }
-        #input5{
+        #input3{
           margin-right: 2.2rem;
+        }
+        #input33{
+          margin-right: 2.2rem;
+          background-color: #ccc;
         }
         .date {
           display: flex;
