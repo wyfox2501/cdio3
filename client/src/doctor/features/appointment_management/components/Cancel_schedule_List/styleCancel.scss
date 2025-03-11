@@ -34,32 +34,31 @@
           font-size: 20px;
         }
         input {
-          padding: 8px;
+            width: 11rem;
+            margin: 0.3rem;
           border-radius: 10px;
           border: 1px solid #ccc;
           text-align: center;
+         
         }
-        #input5{
-          margin-right: 2.2rem;
+        #input2{
+            background-color: rgb(208, 203, 203);
         }
         .date {
           display: flex;
-          justify-content: space-between;
+          justify-content:space-between;
         }
-        .hourStart {
-
+        .hour {
           display: flex;
-          justify-content: space-between;
+          justify-content:space-between;
         }
-        .hourEnd {
-
+        .lyDo  {
           display: flex;
-          justify-content: space-between;
+          justify-content:space-between;
         }
-        .doctor {
-
+        .khachhang, .trieuChung, .sdt{
           display: flex;
-          justify-content: space-between;
+          justify-content:space-between;
         }
         button{
           width: 10rem;

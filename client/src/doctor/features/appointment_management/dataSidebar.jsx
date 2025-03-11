@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Demo from "./components/sidebar/sidebar";
+import Demo from "./components/sidebar_List/sidebar";
 import Heading from "../../component/header/index";
 import { Outlet } from "react-router-dom";
 import "./styleIndex.scss";
-import Footing from '../../../components/footer/Footer.js'
+import Footing from '../../../components/footer/Footer.jsx'
 DataSidebar.propTypes = {};
 
 function DataSidebar(props) {
@@ -66,7 +66,9 @@ function DataSidebar(props) {
           <Outlet />
         </div>
       </div>
+      <div className="foot">
       <Footing/>
+      </div>
     </div>
   );
 }

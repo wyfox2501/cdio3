@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Schedule from '../../components/View_calendar/work_schedule';
+import Schedule from '../../components/View_calendar_List/work_schedule';
 Work_schedule.propTypes = {
     
 };
