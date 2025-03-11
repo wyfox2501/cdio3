@@ -11,6 +11,7 @@ import SignIn from "./auth/sign-in/SignIn";
 import SignUp from "./auth/sign-up/SignUp";
 import { useEffect } from "react";
 import AuthLayout from "./auth/layout/AuthLayout";
+import { ProtectedRoute } from "./services/jwt-services/JWTService";
 
 
 function App() {

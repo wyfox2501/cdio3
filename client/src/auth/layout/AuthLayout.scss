@@ -1,3 +1,9 @@
+@media screen and (max-width: 768px) {
+    html{
+        font-size: 10px;
+    }
+}
+
 .auth-layout-container{
     width: 100%;
     background-color: rgb(236, 236, 236);
@@ -5,6 +11,8 @@
 }
 
 .body{
+    display: flex;
+    justify-content: center;
     box-sizing: border-box;
     width: 100%;
     padding-inline: 1rem;
