@@ -22,7 +22,7 @@ function Header({dataheader}) {
             <h4>HealthCare</h4>
           </div>
           <div class="function">
-            {dataheader.map(data=> (
+            {dataheader?.map(data=> (
               <React.Fragment key={data.id}>
                 <a href="#">{data.title}</a>
               </React.Fragment>
