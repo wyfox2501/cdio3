@@ -7,6 +7,7 @@ import Notification from '../../components/notification/notification'
 import { useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { SetToken } from '../../services/jwt-services/JWTService'
+import { Link } from 'react-router-dom'
 
 
 const SignUp = () => {
@@ -91,6 +92,7 @@ const SignUp = () => {
                     />
                     <span className='error'>{ errors.Confirmation && errors.Confirmation.message }</span>
                 </div>
+                <p>Đã có tài khoản? <Link to="/auth/dang-nhap"> Đăng nhập ngay</Link></p>
                 <button className='sign-up-btn' type="submit">Sign Up</button>
             </form>
         </div>

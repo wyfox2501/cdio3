@@ -12,21 +12,24 @@ import SignUp from "./auth/sign-up/SignUp";
 import { useEffect } from "react";
 import AuthLayout from "./auth/layout/AuthLayout";
 import { ProtectedRoute } from "./services/jwt-services/JWTService";
-import Cancel_schedule from './doctor/features/appointment_management/pages/Cancel_schedule/Cancel_schedule.jsx'
-import Delete_shedule from "./doctor/features/appointment_management/pages/Delete_calender/Delete_shedule.jsx";
+
+
 function App() {
 
   return (
     <div className="App">
       <Routes>
-        <Route path="/quan-li-lich" element={<DataSidebar />}>
-          <Route index element={<ViewSchedule />} />
-          <Route path="lichKham" element={<ViewAppointment />} />
-          <Route path="lichLamViec" element={<ViewSchedule />} />
-          <Route path="ThemLich" element={<Add_calender />} />
-          <Route path="HuyLich" element={<Cancel_schedule />} />
-          <Route path="XoaLich" element={<Delete_shedule />} />
-
+        <Route path="/" element={<ProtectedRoute necessaryRole="Patient" />}>
+          <Route path="/" element={<Home />} >
+          </Route>
+        </Route>
+        <Route path="/" element={<ProtectedRoute necessaryRole="Doctor" />}>
+          <Route path="/quan-li-lich" element={<DataSidebar />}>
+            <Route index element={<ViewSchedule />} />
+            <Route path="lichKham" element={<ViewAppointment />} />
+            <Route path="lichLamViec" element={<ViewSchedule />} />
+            <Route path="ThemLich" element={<Add_calender />} />
+          </Route>
         </Route>
         <Route path="/auth" element={<AuthLayout />}>
           <Route index element={<SignIn />} />

@@ -34,8 +34,13 @@ const isAuthenticated = () => {
     }
 };
 
-const ProtectedRoute = () => {
-    return isAuthenticated() ? <Outlet /> : <Navigate to="/auth/sign-in" />;
+const ProtectedRoute = (necessaryRole = "Patient") => {
+    const account_role = GetRole();
+    const granted = necessaryRole.necessaryRole === account_role;
+    console.log("account_role", account_role);
+    console.log("necessaryRole", necessaryRole.necessaryRole);
+    
+    return isAuthenticated() && granted ? <Outlet /> : <Navigate to="/auth/dang-nhap" />;
 }
 
 export { GetToken, SetToken, GetRole, RemoveToken, isAuthenticated, ProtectedRoute };

@@ -34,7 +34,7 @@ export const signUp = async (req: Request<{},{},IUserSignUp>, res: Response): Pr
             First: First,
             Last: Last,
             Username: Email,
-            Role: "User"
+            Role: "Patient"
         });
         const jwtToken = generateToken(newUserDoc);
         if (jwtToken === null) {
@@ -62,6 +62,7 @@ export const signIn = async (req: Request<{},{},IUserSignIn>, res: Response): Pr
         }
 
         const resValue = userAcc.Email;
+        console.log(userAcc);
         const jwtToken = generateToken(userAcc);
         if (jwtToken === null) {
             return res.status(500).json({ message: "Error signing in" });

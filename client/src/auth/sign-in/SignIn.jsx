@@ -6,6 +6,7 @@ import axios from 'axios'
 import Notification from '../../components/notification/notification'
 import { useNavigate } from 'react-router-dom'
 import { SetToken } from '../../services/jwt-services/JWTService'
+import { Link } from 'react-router-dom'
 
 const SignIn = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -55,6 +56,8 @@ const SignIn = () => {
             />
             <span className='error'>{errors.Password && errors.Password.message}</span>
           </div>
+          <p>Chưa có tài khoản? <Link to="/auth/dang-ky"> Đăng ký ngay</Link></p>
+          
           <button className='sign-in-btn' type="submit">Sign In</button>
         </form>
       </div>
