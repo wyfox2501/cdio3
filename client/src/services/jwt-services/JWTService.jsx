@@ -36,16 +36,11 @@ const isAuthenticated = () => {
 
 const ProtectedRoute = (necessaryRole = "Patient") => {
     const account_role = GetRole();
-    const roles = account_role.split(",");
-    let isGranted = false;
-    console.log(roles);
-    if (roles.length > 1) {
-        isGranted = roles.find(necessaryRole) !== -1 ? true : false;
-    } else {
-        isGranted = roles == necessaryRole;
+    if (!account_role) {
+        return <Navigate to="/auth/dang-nhap" />;
     }
-    console.log("account_role", account_role);
-    console.log("necessaryRole", necessaryRole.necessaryRole);
+    const roles = account_role.split(",");
+    const isGranted = roles.includes(necessaryRole.necessaryRole);
 
     return isAuthenticated() && isGranted ? <Outlet /> : <Navigate to="/auth/dang-nhap" />;
 }

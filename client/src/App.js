@@ -13,6 +13,8 @@ import { useEffect } from "react";
 import AuthLayout from "./auth/layout/AuthLayout";
 import { ProtectedRoute } from "./services/jwt-services/JWTService";
 import HomeLayout from "./customer/component/header/index";
+import CancelSchedule from "./doctor/features/appointment_management/pages/Cancel_schedule/Cancel_schedule";
+import DeleteSchedule from "./doctor/features/appointment_management/pages/Delete_calender/Delete_shedule";
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
             <Route path="lichKham" element={<ViewAppointment />} />
             <Route path="lichLamViec" element={<ViewSchedule />} />
             <Route path="ThemLich" element={<Add_calender />} />
+            <Route path="huy-lich" element={<CancelSchedule />} />
+            <Route path="xoa-lich" element={<DeleteSchedule />} />
           </Route>
         </Route>
         <Route path="/auth" element={<AuthLayout />}>

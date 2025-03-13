@@ -6,11 +6,13 @@
 
 .auth-layout-container{
     width: 100%;
+    min-height: 100vh;
     background-color: rgb(236, 236, 236);
     overflow: auto;
 }
 
 .body{
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
     box-sizing: border-box;

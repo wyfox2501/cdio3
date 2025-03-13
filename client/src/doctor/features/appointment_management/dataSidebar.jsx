@@ -21,12 +21,12 @@ function DataSidebar(props) {
     {
       id: 3,
       title: "Hủy Lịch",
-      path: "/quan-li-lich/huylich",
+      path: "/quan-li-lich/huy-lich",
     },
     {
       id: 4,
       title: "Xóa Lịch",
-      path: "/quan-li-lich/xoalich",
+      path: "/quan-li-lich/xoa-lich",
     },
     {
       id: 5,
