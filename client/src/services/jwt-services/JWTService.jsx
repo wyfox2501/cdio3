@@ -12,7 +12,7 @@ const GetRole = () => {
 const SetToken = (token) => {
     localStorage.setItem("jwt-token", token);
     const role = jwtDecode(token).Role;
-    if (role){
+    if (role) {
         localStorage.setItem("role", role);
     }
 };
@@ -36,11 +36,18 @@ const isAuthenticated = () => {
 
 const ProtectedRoute = (necessaryRole = "Patient") => {
     const account_role = GetRole();
-    const granted = necessaryRole.necessaryRole === account_role;
+    const roles = account_role.split(",");
+    let isGranted = false;
+    console.log(roles);
+    if (roles.length > 1) {
+        isGranted = roles.find(necessaryRole) !== -1 ? true : false;
+    } else {
+        isGranted = roles == necessaryRole;
+    }
     console.log("account_role", account_role);
     console.log("necessaryRole", necessaryRole.necessaryRole);
-    
-    return isAuthenticated() && granted ? <Outlet /> : <Navigate to="/auth/dang-nhap" />;
+
+    return isAuthenticated() && isGranted ? <Outlet /> : <Navigate to="/auth/dang-nhap" />;
 }
 
 export { GetToken, SetToken, GetRole, RemoveToken, isAuthenticated, ProtectedRoute };

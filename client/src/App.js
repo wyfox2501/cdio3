@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import "./App.scss";
-import Home from "./doctor/features/appointment_management/pages/home/home_appointment_management";
+import Home from "./customer/features/home/pages/home";
 import ViewAppointment from "./doctor/features/appointment_management/pages/View_appointment/view_appointment";
 import DataSidebar from "./doctor/features/appointment_management/dataSidebar";
 import ViewSchedule from "./doctor/features/appointment_management/pages/View_work_schedule/Work_schedule";
@@ -12,6 +12,7 @@ import SignUp from "./auth/sign-up/SignUp";
 import { useEffect } from "react";
 import AuthLayout from "./auth/layout/AuthLayout";
 import { ProtectedRoute } from "./services/jwt-services/JWTService";
+import HomeLayout from "./customer/component/header/index";
 
 
 function App() {
@@ -19,8 +20,9 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<ProtectedRoute necessaryRole="Patient" />}>
-          <Route path="/" element={<Home />} >
+        <Route path="/" element={<ProtectedRoute necessaryRole="Patient" />}>\
+          <Route path="/" element={<HomeLayout />}>
+            <Route path="/" element={<Home />} />
           </Route>
         </Route>
         <Route path="/" element={<ProtectedRoute necessaryRole="Doctor" />}>
