@@ -17,6 +17,7 @@ import HomeLayout from "./customer/component/header/index";
 import CancelSchedule from "./doctor/features/appointment_management/pages/Cancel_schedule/Cancel_schedule";
 import DeleteSchedule from "./doctor/features/appointment_management/pages/Delete_calender/Delete_shedule";
 import AdminLayout from "./admin/pages/layout.js";
+import DoctorSelection from "./customer/features/make_an_appointment/component/DoctorSelection.jsx"
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<ProtectedRoute necessaryRole="Patient" />}>\
+          <Route path="chon-bac-si" element={<DoctorSelection />} />
           <Route path="/" element={<HomeLayout />}>
             <Route path="/" element={<Home />} />
           </Route>
@@ -44,8 +46,8 @@ function App() {
           <Route path="dang-ky" element={<SignUp />} />
           <Route path="dang-nhap" element={<SignIn />} />
         </Route>
-        <Route path="/" element={<ProtectedRoute necessaryRole="Admin" />}>
-          <Route path="admin" element={<AdminLayout />}>
+        <Route path="/admin" element={<ProtectedRoute necessaryRole="Admin" />}>
+          <Route path="" element={<AdminLayout />}>
             <Route path="role-manager" element={<RoleManagerPage />} />
             <Route path="user-manager" element={<UserManager /> } />
           </Route>
@@ -53,9 +55,15 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
-      {/* <View /> */}
     </div>
   );
 }
 
 export default App;
+
+
+
+
+
+
+

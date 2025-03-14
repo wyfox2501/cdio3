@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import "./style.scss";
 import Cat from "../../images/cat.png";
 import Healthycare from "../../images/healthycare.jpg";
+
 import { Link } from "react-router-dom";
 import { GetRole } from "../../services/jwt-services/JWTService";
 import { useNavigate } from "react-router-dom";
@@ -93,6 +94,7 @@ function Header() {
           <img src={Cat} alt="" />
           <div class="drop-menu">
             <a href="">Thông Tin Cá Nhân</a>
+            <a href="">Thông Tin Lịch Hẹn</a>
             <a onClick={signOut}>Đăng Xuất</a>
           </div>
         </div>
