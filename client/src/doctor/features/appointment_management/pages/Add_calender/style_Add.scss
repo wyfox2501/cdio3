@@ -1,6 +1,6 @@
 .add{
     position: relative;
-    width: 77vw;
+    width: 100%;
     height: auto;
     border: 1px solid #cce5ff;
     p{
@@ -20,6 +20,11 @@
         margin-left: 15%;
         border-radius: 20px;
         margin-bottom: 2rem;
+        margin-top: 4rem;
+        h2{
+          font-size: 2rem;
+          padding: 1rem;
+        }
         .insert {
           width: 70%;
           height: auto;
@@ -34,28 +39,27 @@
           border: 1px solid #ccc;
           text-align: center;
         }
-        #input{
-          margin-right: 35px;
+        #input5{
+          margin-right: 2.2rem;
         }
         .date {
-          margin: 10px;
           display: flex;
-          justify-content: space-around;
+          justify-content: space-between;
         }
         .hourStart {
-          margin: 10px;
+
           display: flex;
-          justify-content: space-around;
+          justify-content: space-between;
         }
         .hourEnd {
-          margin: 10px;
+
           display: flex;
-          justify-content: space-around;
+          justify-content: space-between;
         }
         .doctor {
-          margin: 10px;
+
           display: flex;
-          justify-content: space-around;
+          justify-content: space-between;
         }
         button{
           width: 10rem;

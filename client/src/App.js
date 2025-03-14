@@ -1,43 +1,43 @@
 import logo from "./logo.svg";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import "./App.scss";
-import Home from "./doctor/features/appointment_management/pages/home/home_appointment_management.jsx";
-import ViewAppointment from "./doctor/features/appointment_management/pages/View_appointment/view_appointment.jsx";
-import DataSidebar from "./doctor/features/appointment_management/dataSidebar.jsx";
-import ViewSchedule from "./doctor/features/appointment_management/pages/View_work_schedule/Work_schedule.jsx";
-import Add_calender from "./doctor/features/appointment_management/pages/Add_calender/Add_calender.jsx";
-import DoctorSelection from "./customer/features/make_an_appointment/component/DoctorSelection";
+import Home from "./doctor/features/appointment_management/pages/home/home_appointment_management";
+import ViewAppointment from "./doctor/features/appointment_management/pages/View_appointment/view_appointment";
+import DataSidebar from "./doctor/features/appointment_management/dataSidebar";
+import ViewSchedule from "./doctor/features/appointment_management/pages/View_work_schedule/Work_schedule";
+import Add_calender from "./doctor/features/appointment_management/pages/Add_calender/Add_calender";
+import NotFound from "./components/not-found-handle/NotFound";
+import SignIn from "./auth/sign-in/SignIn";
+import SignUp from "./auth/sign-up/SignUp";
+import { useEffect } from "react";
+import AuthLayout from "./auth/layout/AuthLayout";
+import { ProtectedRoute } from "./services/jwt-services/JWTService";
+import Cancel_schedule from './doctor/features/appointment_management/pages/Cancel_schedule/Cancel_schedule.jsx'
+import Delete_shedule from "./doctor/features/appointment_management/pages/Delete_calender/Delete_shedule.jsx";
+import DoctorSelection from "./customer/features/make_an_appointment/component/DoctorSelection.jsx"
 
-
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <Routes>
-//         <Route path="/" element={<DataSidebar />}>
-//           <Route index element={<Home />} />
-//           <Route path="lichKham" element={<ViewAppointment />} />
-//           <Route path="lichLamViec" element={<ViewSchedule />} />
-//           <Route path="ThemLich" element={<Add_calender />} />
-//         </Route>
-//       </Routes>
-//       {/* <View /> */}
-//     </div>
-//   );
-// }
-
-// export default App;
 function App() {
+
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<DataSidebar />}>
-          <Route index element={<Home />} />
+        <Route path="/quan-li-lich" element={<DataSidebar />}>
+          <Route index element={<ViewSchedule />} />
           <Route path="lichKham" element={<ViewAppointment />} />
           <Route path="lichLamViec" element={<ViewSchedule />} />
           <Route path="ThemLich" element={<Add_calender />} />
-          <Route path="chonBacSi" element={<DoctorSelection />} />  {/* Thêm route này */}
+          <Route path="HuyLich" element={<Cancel_schedule />} />
+          <Route path="XoaLich" element={<Delete_shedule />} />
         </Route>
+        <Route path="/" >
+          <Route path="chon-bac-si" element={<DoctorSelection />} />
+        </Route>
+        <Route path="/auth" element={<AuthLayout />}>
+          <Route index element={<SignIn />} />
+          <Route path="dang-ky" element={<SignUp />} />
+          <Route path="dang-nhap" element={<SignIn />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

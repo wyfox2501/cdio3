@@ -7,6 +7,7 @@ export interface IUser{
     First: string;
     Last: string;
     Lockend: Date;
+    Role: string;
 }
 
 const UserSchema = new Schema<IUser>({
@@ -15,7 +16,8 @@ const UserSchema = new Schema<IUser>({
     PasswordHash: {type: String, required: true},
     First: {type: String, required: true},
     Last: {type: String, required: true},
-    Lockend: {type: Date}
+    Lockend: {type: Date},
+    Role: {type: String, required: true}
 });
 
 const User = model<IUser>("User", UserSchema);

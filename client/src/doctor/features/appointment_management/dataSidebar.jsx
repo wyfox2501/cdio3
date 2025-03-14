@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Demo from "./components/sidebar/sidebar";
+import Demo from "./components/sidebar_List/sidebar";
 import Heading from "../../component/header/index";
 import { Outlet } from "react-router-dom";
 import "./styleIndex.scss";
-import Footing from '../../../components/footer/Footer.js'
+import Footing from '../../../components/footer/Footer.jsx'
 DataSidebar.propTypes = {};
 
 function DataSidebar(props) {
@@ -16,27 +16,27 @@ function DataSidebar(props) {
     {
       id: 2,
       title: "Thêm Lịch",
-      path: "/themlich",
+      path: "/quan-li-lich/themlich",
     },
     {
       id: 3,
       title: "Hủy Lịch",
-      path: "/huylich",
+      path: "/quan-li-lich/huylich",
     },
     {
       id: 4,
       title: "Xóa Lịch",
-      path: "/xoalich",
+      path: "/quan-li-lich/xoalich",
     },
     {
       id: 5,
       title: "Xem Lịch Sử Lịch Khám",
-      path: "/xemLichSuLichKham",
+      path: "/quan-li-lich/xemLichSuLichKham",
     },
     {
       id: 6,
       title: "Chốt Lịch",
-      path: "/chotLich",
+      path: "/quan-li-lich/chotLich",
     },
   ];
   const viewList = [
@@ -44,27 +44,31 @@ function DataSidebar(props) {
       id_view: "kham",
       title: "Lịch Khám",
       id: 1,
-      path: "LichKham",
+      path: "/quan-li-lich/LichKham",
     },
     {
       id_view: "work",
       title: "Lịch Làm Việc",
       id: 1,
-      path: "/LichLamViec",
+      path: "/quan-li-lich/LichLamViec",
     },
   ];
   return (
-    <div>
-      <Heading />
+    <div className="container-main">
+      <div className="heading">
+        <Heading />
+      </div>
       <div className="body">
         <div className="side">
           <Demo managerList={managerList} viewList={viewList} />
         </div>
-        <div className="container">
+        <div className="doctor-body">
           <Outlet />
         </div>
       </div>
+      <div className="foot">
       <Footing/>
+      </div>
     </div>
   );
 }

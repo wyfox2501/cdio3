@@ -3,5 +3,5 @@ export interface IUserSignUp {
     Password: string;
     First: string;
     Last: string;
-    ConfirmPassword: string;
+    Confirmation: string;
 }
