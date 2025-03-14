@@ -3,7 +3,7 @@ const CreateRoleButton = ({ onClick }) => {
   return (
     <div className="createrolebutton">
       <button className="btncreaterole" onClick={onClick}>
-        Bú
+        Thêm Role
       </button>
     </div>
   );

@@ -4,19 +4,20 @@ import bcrypt from "bcryptjs";
 import { IUserSignUp } from "../dtos/user-sign-up.dto";
 import User from "../models/user.model";
 import { IUserSignIn } from "../dtos/user-sign-in.dto";
-
+import {generateToken, validateToken} from "../services/jwt-services";
 
 
 export const signUp = async (req: Request<{},{},IUserSignUp>, res: Response): Promise<any> => {
     try {
-        const { Email, Password, ConfirmPassword, First, Last } = req.body;
-        const newUser = { Email, Password, ConfirmPassword, First, Last };
+        const { Email, Password, Confirmation, First, Last } = req.body;
+        const newUser = { Email, Password, Confirmation, First, Last };
+        console.log(newUser);
 
-        if (!Email || !Password || !ConfirmPassword || !First || !Last) {
+        if (!Email || !Password || !Confirmation || !First || !Last) {
             return res.status(400).json({ message: "Please fill all fields" });
         }
 
-        if (Password !== ConfirmPassword) {
+        if (Password !== Confirmation) {
             return res.status(400).json({ message: "Passwords do not match" });
         }
 
@@ -28,14 +29,19 @@ export const signUp = async (req: Request<{},{},IUserSignUp>, res: Response): Pr
         const hashedPassword = await hashPassword(Password);
         
         const newUserDoc = new User({
-            Email,
+            Email: Email,
             PasswordHash: hashedPassword,
-            First,
-            Last,
-            Username: Email
+            First: First,
+            Last: Last,
+            Username: Email,
+            Role: "Patient"
         });
+        const jwtToken = generateToken(newUserDoc);
+        if (jwtToken === null) {
+            return res.status(500).json({ message: "Error creating user" });
+        }
         newUserDoc.save();
-        res.status(201).json({ message: "User created", newUserDoc });
+        res.status(201).json({ message: "User created", jwtToken });
     } catch (error) {
         res.status(500).json({ message: "Error creating user", error });
     }
@@ -56,8 +62,13 @@ export const signIn = async (req: Request<{},{},IUserSignIn>, res: Response): Pr
         }
 
         const resValue = userAcc.Email;
+        console.log(userAcc);
+        const jwtToken = generateToken(userAcc);
+        if (jwtToken === null) {
+            return res.status(500).json({ message: "Error signing in" });
+        }
 
-        res.status(200).json({ message: "User signed in" , resValue});
+        res.status(200).json({ message: "User signed in" , jwtToken});
     } catch (error) {
         res.status(500).json({ message: "Error signing in", error });
     }

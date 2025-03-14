@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Tablock from "./Tablock";
 import './tableuser.css'
+import './../../css/tableAdmin.css'
 
 const Table = ({ data }) => {
     const [tableData, setTableData] = useState(data.tableData);

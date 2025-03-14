@@ -14,7 +14,7 @@ const EditRoleModal = ({ isOpen, closeModal, role, updateRole }) => {
     isOpen && (
       <div className="modal">
         <div className="modal-content">
-          <h2  className='btnErole1'>e dit</h2>
+          <h2  className='btnErole1'>Edit</h2>
           <input  className='btnErole2' type="text" value={newRole} onChange={(e) => setNewRole(e.target.value)} />
           <button className='btnErole' onClick={handleUpdate}>Cập Nhật Quyền</button>
           <button className='btnEroleback' onClick={closeModal}>Trở Về</button>
