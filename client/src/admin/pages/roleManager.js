@@ -1,6 +1,6 @@
 import { Edit, Trash } from "lucide";
-import Todolist from "../componentsTable/todolist";
-import Todolistrole from "../componentsTable/todolistrole";
+import Todolist from "../componentsTable/tableuser/todolist";
+import Todolistrole from "../componentsTable/tablerole/todolistrole";
 
 const RoleManagerPage = () => {
     return (

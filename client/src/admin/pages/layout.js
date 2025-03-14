@@ -10,7 +10,7 @@ const LayoutManager = ({children}) => {
         <div className='header'>
             <h1>Danh Sách Tài Khoản</h1>
         </div>
-        <h2 className="title">Adminstrator</h2>
+        <h2 className="title"><h2 className="title1">Adminstrator</h2></h2>
         <div className='main'>
             <SideBar />
             {children}

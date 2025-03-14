@@ -1,0 +1,142 @@
+.createrolebutton {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .btncreaterole {
+    padding: 10px 20px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: -1211px;
+    margin-bottom: 3px;
+  }
+  
+  .btncreaterole:hover {
+    background-color: #2563eb;
+  }
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  margin-top: 250px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.titleCR {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.ERN {
+  padding: 5px;
+  margin: 10px 0;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.notification {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.notification.success {
+  background-color: #4caf50;
+  color: white;
+}
+
+.notification.error {
+  background-color: #f44336; 
+  color: white;
+}
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-button.delete {
+  color: red;
+}
+
+.icon-button.edit {
+  color: blue;
+}
+
+.icon-button:hover {
+  opacity: 0.7;
+}
+th:last-child, td:last-child {
+  width: 100px;
+  text-align: center;
+}
+.btnErole{
+  background: #e5e7eb;
+  color: black;
+}
+
+.btnEroleback {
+  background: #e5e7eb;
+  color: black;
+}
+
+.modal-content button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 5px;
+}
+.btnErole1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.btnErole2 {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

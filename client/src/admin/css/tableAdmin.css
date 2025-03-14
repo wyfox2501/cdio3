@@ -29,8 +29,14 @@ body {
     align-items: center;
     gap: 120px;
   }
+  .managerBT{
+    text-shadow: 4px 3px 5px rgba(0, 0, 0, 0.3);
+  }
   .header{
     text-align: center;
+    background: rgb(78, 112, 176);
+    border-radius: 16px;
+    text-shadow: 4px 3px 5px rgba(0, 0, 0, 0.3);
   }
   .table-container {
     flex: 1;
@@ -62,6 +68,7 @@ body {
     padding-right: 1.5rem; 
     padding-top: 0.75rem; 
     padding-bottom: 0.75rem; 
+   
   }
   
   .table tbody .table-row {
@@ -121,6 +128,13 @@ body {
   }
   .title{
     text-align: left;
+  }
+  .title1{
+    background: #4CAF50;
+    text-align: center;
+    width: 300px;
+    border-radius: 10px;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
   }
   .button-container {
     display: flex;
