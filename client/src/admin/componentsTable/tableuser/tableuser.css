@@ -1,0 +1,41 @@
+.dropdownLock{
+    padding: 8px 12px;
+    border: 2px solid #26ff00; 
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  select:focus {
+    outline: none;
+    border-color: #0056b3; 
+    box-shadow: 0px 0px 8px rgba(0, 91, 187, 0.5);
+}
+
+select:hover {
+    background-color: #f8f9fa; 
+}
+.dropdownLockRole {
+  padding: 10px;
+  border: 2px solid #200dcd; 
+  border-radius: 6px;
+  font-size: 12px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 110px;
+  text-align: center;
+  color: transparent;
+  
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16'><path fill='black' d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px;
+}
+
+.dropdownLockRole:focus,
+.dropdownLockRole:hover {
+  color: black;
+}

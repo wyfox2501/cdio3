@@ -1,4 +1,5 @@
-import logo from "./logo.svg";
+import RoleManagerPage from "./admin/pages/roleManager.js";
+import UserManager from "./admin/pages/userManager.js";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import "./App.scss";
 import Home from "./customer/features/home/pages/home";
@@ -15,6 +16,7 @@ import { ProtectedRoute } from "./services/jwt-services/JWTService";
 import HomeLayout from "./customer/component/header/index";
 import CancelSchedule from "./doctor/features/appointment_management/pages/Cancel_schedule/Cancel_schedule";
 import DeleteSchedule from "./doctor/features/appointment_management/pages/Delete_calender/Delete_shedule";
+import AdminLayout from "./admin/pages/layout.js";
 
 
 function App() {
@@ -42,6 +44,13 @@ function App() {
           <Route path="dang-ky" element={<SignUp />} />
           <Route path="dang-nhap" element={<SignIn />} />
         </Route>
+        <Route path="/" element={<ProtectedRoute necessaryRole="Admin" />}>
+          <Route path="admin" element={<AdminLayout />}>
+            <Route path="role-manager" element={<RoleManagerPage />} />
+            <Route path="user-manager" element={<UserManager /> } />
+          </Route>
+        </Route>
+
         <Route path="*" element={<NotFound />} />
       </Routes>
       {/* <View /> */}
