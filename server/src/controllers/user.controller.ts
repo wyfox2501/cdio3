@@ -74,6 +74,15 @@ export const signIn = async (req: Request<{},{},IUserSignIn>, res: Response): Pr
     }
 };
 
+export const getUsers = async (req: Request, res: Response): Promise<any> => {
+    try {
+        const users = await User.find();
+        res.status(200).json(users);
+    } catch (error) {
+        res.status(500).json({ message: "Error getting users", error });
+    }
+}
+
 const hashPassword = async (pass: string): Promise<string> => {
     const salt = await bcrypt.genSalt(10);
     return await bcrypt.hash(pass, salt);

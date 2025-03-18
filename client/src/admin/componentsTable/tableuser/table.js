@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Tablock from "./Tablock";
 import './tableuser.css'
 import './../../css/tableAdmin.css'
@@ -7,6 +7,15 @@ const Table = ({ data }) => {
     const [tableData, setTableData] = useState(data.tableData);
     const [showConfirmModal, setShowConfirmModal] = useState(false);
     const [selectedRow, setSelectedRow] = useState(null);
+    const [tableDataTemp, setTableDataTemp] = useState(data.tableData);
+
+    useEffect(() => {
+        setTableDataTemp(data.tableData);
+    }, [data.tableData]);
+
+    useEffect(() => {
+        setTableData(tableDataTemp);
+    }, [tableData ,tableDataTemp]);
 
     const handleStatusChange = (rowIndex, cellIndex, newValue) => {
         if (cellIndex === 2 && newValue === "Khóa") {
@@ -21,7 +30,7 @@ const Table = ({ data }) => {
         const updatedData = tableData.map((row, index) =>
             index === rowIndex ? row.map((cell, i) => (i === cellIndex ? newValue : cell)) : row
         );
-        setTableData(updatedData);
+        setTableDataTemp(updatedData);
         setShowConfirmModal(false);
     };
 
