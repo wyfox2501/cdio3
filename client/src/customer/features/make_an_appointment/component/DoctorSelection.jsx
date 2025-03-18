@@ -104,7 +104,7 @@ export default function DoctorSelection() {
        <Header dataheader={menuItems} className="header"/>
        </div>
      
-      <div className="container">
+      <div className="container-doctor-selection">
     
         <div className="controls">
           <input 

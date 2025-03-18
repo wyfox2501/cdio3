@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<ProtectedRoute necessaryRole="Patient" />}>\
+        <Route path="/" element={<ProtectedRoute necessaryRole="Patient" />}>
           <Route path="chon-bac-si" element={<DoctorSelection />} />
           <Route path="/" element={<HomeLayout />}>
             <Route path="/" element={<Home />} />

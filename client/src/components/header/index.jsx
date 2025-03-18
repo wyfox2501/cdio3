@@ -52,7 +52,30 @@ const patientDataHeader = [
   {
     id: 3,
     title: 'Đặt Lịch',
-    url: '/dat-lich'
+    url: '/chon-bac-si'
+  }
+];
+
+const adminDataHeader = [
+  {
+    id: 1,
+    title: 'Tổng Quan',
+    url: '/'
+  },
+  {
+    id: 2,
+    title: 'Lập Kế Hoạch',
+    url: '/lap-ke-hoach'
+  },
+  {
+    id: 3,
+    title: 'Đặt Lịch',
+    url: '/chon-bac-si'
+  },
+  {
+    id: 4,
+    title: 'Quản Trị Viên',
+    url: '/admin/role-manager'
   }
 ];
 
@@ -66,6 +89,7 @@ function Header() {
     localStorage.removeItem("role");
     navigate("/auth/dang-nhap");
   };
+  const [isAnotherPatient, setIsAnotherPatient] = React.useState(false);
 
 
   return (
@@ -77,17 +101,24 @@ function Header() {
             <h4>HealthCare</h4>
           </Link>
           <div class="function">
-            {GetRole().split(",").includes("Doctor")
-              ? doctorDataHeader.map((item) => (
+            {GetRole().split(",").includes("Admin")
+              ? adminDataHeader.map((item) => (
+                  <Link key={item.id} to={`${item.url}`}>
+                    {item.title}
+                  </Link>
+                )):
+                GetRole().split(",").includes("Doctor") ? 
+                doctorDataHeader.map((item) => (
+                  <Link key={item.id} to={`${item.url}`}>
+                    {item.title}
+                  </Link>
+                )): 
+                patientDataHeader.map((item) => (
                   <Link key={item.id} to={`${item.url}`}>
                     {item.title}
                   </Link>
                 ))
-              : patientDataHeader.map((item) => (
-                  <Link key={item.id} to={`${item.url}`}>
-                    {item.title}
-                  </Link>
-                ))}
+              }
           </div>
         </div>
         <div class="right-menu">

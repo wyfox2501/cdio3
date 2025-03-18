@@ -44,9 +44,10 @@ const id=1;
           onClick={() => {
             toggleDropdown(data.id);
             handleClick(data.id)
+            toggleColor(data.id);
           }}
           style={{
-            backgroundColor: activeLink === data.id ? bgColor : "#ffffff",
+            backgroundColor: activeLink === data.id ? bgColor && isOn : "#ffffff",
           }}
         >
           <span>⚫</span>
